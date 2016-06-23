@@ -9,16 +9,16 @@ var trainingOptions = {
 };
 
 var learningRate = 0.3;
-for(var i = 0; i < 900; i++){
+for(var i = 0; i < 100; i++){
     // trainer.train([{
     //     input: [i * 0.0001],
     //     output: [ ( i % 2 === 0 ? 1: 0) ]
     // }], trainingOptions);
-    console.log(i, i * 0.0001, ( i % 2 === 0 ? 1: 0));
-    network.activate([i * 0.0001]);
+    // console.log(i, i * 0.001, ( i % 2 === 0 ? 1: 0));
+    network.activate([i * 0.001]);
     network.propagate(learningRate, [( i % 2 === 0 ? 1: 0)]);
 }
 
 for(var i = 0; i < 10; i++){
-    console.log(network.activate([i * 0.0001])[0]);
+    console.log(network.activate([i * 0.001])[0]);
 }
