@@ -23,8 +23,14 @@ var output = 1;
 var connections = 30;
 var gates = 10;
 
+//Create LSTM
+console.log("Initializing LSTM...");
 var network = new synaptic.Architect.Liquid(input, pool, output, connections, gates);
 
+console.log("Optimizing LSTM...");
+LSTM.optimize();
+
+console.log("Starting training...");
 var learningRate = 0.1;
 network.activate([0,1,1,0,1,0,0,0]);
 network.activate([0,1,1,0,0,1,0,1]);
